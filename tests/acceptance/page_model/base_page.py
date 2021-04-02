@@ -7,7 +7,7 @@ class BasePage:
 
     @property
     def url(self):
-        return 'https://getdigest.com'
+        return 'https://dev.getdigest.com'
 
     @property
     def title(self):

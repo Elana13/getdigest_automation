@@ -1,6 +1,7 @@
 from behave import *
 
 from tests.acceptance.page_model.base_page import BasePage
+from tests.acceptance.page_model.contactus_page import ContactUsPage
 
 use_step_matcher('re')
 
@@ -19,3 +20,17 @@ def step_impl(context, link_text):
 
 #   link = context.driver.find_element_by_css_selector(f'.menu a[href="/{menu_item}"]')
 
+@when('User enter "(.*)" in the "(.*)" field')
+def step_impl(context, content, field_name):
+    page = ContactUsPage(context.driver)
+    page.form_fields(field_name).send_keys(content)
+
+@when('User check agreement')
+def step_impl(context):
+    page = ContactUsPage(context.driver)
+    page.agreement_checkbox.click()
+
+@when('User press "Submit" button')
+def step_impl(context):
+    page = ContactUsPage(context.driver)
+    page.submit_button.click()

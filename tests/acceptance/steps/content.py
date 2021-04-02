@@ -1,5 +1,7 @@
 from behave import *
 from tests.acceptance.page_model.base_page import BasePage
+from tests.acceptance.page_model.contactus_page import ContactUsPage
+from tests.acceptance.page_model.contactus_success_page import ContactUsPageSuccess
 from tests.acceptance.page_model.forbusiness_page import ForBusinessPage
 
 use_step_matcher('re')
@@ -12,7 +14,7 @@ def step_impl(context):
     assert page.title.is_displayed()
 
 
-@step('The title is "(.*)"')  #we can use step everywhere
+@step('The main header is "(.*)"')  #we can use step everywhere
 def step_impl(context, content):
     page = BasePage(context.driver)
     assert page.title.text == content
@@ -22,6 +24,9 @@ def step_impl(context):
     page = ForBusinessPage(context.driver)
 
     assert page.banner.is_displayed()
+
+
+
 
 
 
