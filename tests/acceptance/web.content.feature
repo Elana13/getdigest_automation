@@ -22,6 +22,7 @@ Feature: Test that page has correct content
     And User enter "subject" in the "Contact.Subject" field
     And User enter "message" in the "Contact.Comment" field
     And User check agreement
+    And User check captcha
     And User press "Submit" button
     Then User is on the success page
-    Then The main header is "Thank you for contacting us!"
+#    Then The main header is "Thank you for contacting us!"

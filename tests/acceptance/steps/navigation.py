@@ -28,7 +28,7 @@ def step_impl(context):
     page = ForBusinessPage(context.driver)
     context.driver.get(page.url)
 
-@given('User is on "ContactUs" page')
+@given('User is on "Contact Us" page')
 def step_impl(context):
     context.driver = webdriver.Chrome('d:\\ChromeDriver\\chromedriver.exe')
     page = ContactUsPage(context.driver)
@@ -39,6 +39,11 @@ def step_impl(context):
     expected_url = AddonPage(context.driver).url
     assert context.driver.current_url == expected_url
 
+@then('User is on "Contact Us" page')
+def step_impl(context):
+    expected_url = ContactUsPage(context.driver).url
+    assert context.driver.current_url == expected_url
+
 @then('User is on the Homepage')
 def step_impl(context):
     expected_url = HomePage(context.driver).url
@@ -47,6 +52,7 @@ def step_impl(context):
 @then('User is on the success page')
 def step_impl(context):
     expected_url = ContactUsPageSuccess(context.driver).url
+    print(expected_url)
     assert context.driver.current_url == expected_url
 
 

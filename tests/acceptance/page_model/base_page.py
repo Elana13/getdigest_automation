@@ -15,4 +15,4 @@ class BasePage:
 
     @property
     def top_menu(self):
-        return self.driver.find_element(*BasePageLocators.MENU_LINKS)
+        return self.driver.find_elements(*BasePageLocators.MENU_LINKS)

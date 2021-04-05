@@ -13,8 +13,7 @@ class ContactUsPage(BasePage):
     def form(self):          #whole form
         return self.driver.find_element(*ContactUsPageLocators.CONTACT_FORM)
 
-    @property
-    def form_fields(self, name):        #access to every form field by DOM name property; element should be a child of form!
+    def form_field(self, name):        #access to every form field by DOM name property; element should be a child of form!
         return self.form.find_element(By.NAME, name)    #possible to find by id as well
 
     @property
@@ -24,4 +23,8 @@ class ContactUsPage(BasePage):
     @property
     def agreement_checkbox(self):
         return self.driver.find_element(*ContactUsPageLocators.AGREEMENT_CHECKBOX)
+
+    @property
+    def captcha(self):
+        return self.driver.find_element(*ContactUsPageLocators.CAPTCHA)
 

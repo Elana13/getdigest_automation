@@ -8,5 +8,6 @@ class ContactUsPageLocators:
     SUBJECT_FIELD = By.ID, 'Contact_Subject'
     MESSAGE_FIELD = By.ID, 'Contact_Comment'
     AGREEMENT_CHECKBOX = By.ID, 'Contact_Agreement'
+    CAPTCHA = By.CLASS_NAME, 'form-field captcha'
     SUBMIT_BUTTON = By.TAG_NAME, 'button'
 
